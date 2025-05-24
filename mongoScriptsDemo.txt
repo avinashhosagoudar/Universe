@@ -459,6 +459,9 @@ db.sales.aggregate([
   }
 ])
 
+> db.sales.aggregate([
+...   { $group: { _id: "$item", totalQty: { $sum: "$quantity" }, totalRevenue: { $sum: { $multiply: ["$quantity", "$price"] } } } }
+... ])
 
 
 
