@@ -754,7 +754,31 @@ db.aggregateproduct.aggregate([
 ])
 
 
+ Example 1: Product names that start with "reg"
+js
+Copy
+Edit
+db.indexcollection.find({
+  product: { $regex: /^reg/, $options: "i" }
+})
 
+
+Example 2: Products that contain "book" (anywhere in the string)
+js
+Copy
+Edit
+db.indexcollection.find({
+  product: { $regex: /book/, $options: "i" }
+})
+
+
+Find product names starting with "book"
+js
+Copy
+Edit
+db.indexcollection.find({
+  product: { $regex: /^book/, $options: "i" }
+})
 
 
 
