@@ -781,4 +781,7 @@ db.indexcollection.find({
 })
 
 
+db.indexcollection.find({ status: "A" }).limit(2)
+
+
 
