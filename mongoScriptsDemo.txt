@@ -720,8 +720,38 @@ db.geoplaces.createIndex( { location: "2dsphere" } )
  
 
 
+db.aggregateproduct.aggregate([
+  {
+    $group: {
+      _id: "$product",
+      totalQuantity: { $sum: "$quantity" }
+    }
+  },
+  {
+    $merge: "mergedProductSummary"
+  }
+])
+#Count()
+db.aggregateproduct.countDocuments({ status: "A" })
+db.aggregateproduct.countDocuments()
+
+#distinct()  unique value
+db.aggregateproduct.distinct("status")
+db.aggregateproduct.distinct("product")
 
 
+#$merge
+db.aggregateproduct.aggregate([
+  {
+    $group: {
+      _id: "$product",
+      totalQuantity: { $sum: "$quantity" }
+    }
+  },
+  {
+    $merge: "mergedProductSummary"
+  }
+])
 
 
 
