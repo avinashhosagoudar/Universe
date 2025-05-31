@@ -1,0 +1,2 @@
+winsymlinks:nativestrict ln -s source target
+MSYS
