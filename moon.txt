@@ -1,44 +1,353 @@
-winsymlinks:nativestrict ln -s source target
-MSYS
 
+--------------------------------------------------------------------------------------------------------------
+Task008:  Write a program to create a class named Customer 
+Call the customer class in Task008 class using an object.
 
-public enum Element {
-    H("Hydrogen", 1, 1.008f),
-    HE("Helium", 2, 4.0026f),
-    // ...
-    NE("Neon", 10, 20.180f);
+public class Task008 {
+   public static void main(String[] args) {
+       Customer obj= new Customer();
+       obj.display();
+       obj.accept();
 
-    private static final Map<String, Element> BY_LABEL = new HashMap<>();
-    private static final Map<Integer, Element> BY_ATOMIC_NUMBER = new HashMap<>();
-    private static final Map<Float, Element> BY_ATOMIC_WEIGHT = new HashMap<>();
-    
-    static {
-        for (Element e : values()) {    //for each loop
-            BY_LABEL.put(e.label, e);
-            BY_ATOMIC_NUMBER.put(e.atomicNumber, e);
-            BY_ATOMIC_WEIGHT.put(e.atomicWeight, e);
-        }
-    }
-
-    public final String label;
-    public final int atomicNumber;
-    public final float atomicWeight;
-
-    private Element(String label, int atomicNumber, float atomicWeight) {
-        this.label = label;
-        this.atomicNumber = atomicNumber;
-        this.atomicWeight = atomicWeight;
-    }
-
-    public static Element valueOfLabel(String label) {
-        return BY_LABEL.get(label);
-    }
-
-    public static Element valueOfAtomicNumber(int number) {
-        return BY_ATOMIC_NUMBER.get(number);
-    }
-
-    public static Element valueOfAtomicWeight(float weight) {
-        return BY_ATOMIC_WEIGHT.get(weight);
     }
 }
+class Customer{
+    void display(){
+        System.out.println("display Customer called");
+    }
+    void accept(){
+        System.out.println("accept Customer called");
+    }
+}
+
+o/p:
+display Customer called
+accept Customer called
+
+---------------------------------------------------------------------------------------------------------------
+
+Task009: Wap to check the greater of 2 numbers
+
+
+import java.util.Scanner;
+class Task009 {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter value of a = ");
+       int a = sc.nextInt();
+       System.out.println("Enter value of b = ");
+       int b = sc.nextInt();
+       
+       if (a > b){
+       System.out.println("a is greater");
+       }
+       else{
+           System.out.println("b is greater than a");
+       }
+       
+     
+       
+    }
+}
+
+o/p: 
+Enter value of a = 
+10
+Enter value of b = 
+20
+b is greater than a
+--------------------------------------------------------------------------------------------------
+
+Task0010: Wap to check greater of 3 numbers 
+
+import java.util.Scanner;
+class Task0010 {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Enter value of a = ");
+       int a = sc.nextInt();
+       System.out.println("Enter value of b = ");
+       int b = sc.nextInt();
+       System.out.println("Enter value of c = ");
+       int c = sc.nextInt();
+       
+       if (a >= b && a >= c){
+       System.out.println("a is greater");
+       }
+       else if (b >= a && b >= c){
+           System.out.println("b is greater ");
+       }
+       else {
+           System.out.println("c is greater ");
+           
+       }
+       
+     
+       
+    }
+}
+
+ o/p:
+Enter value of a = 
+30
+Enter value of b = 
+20
+Enter value of c = 
+70
+c is greater 
+
+-----------------------------------------------------------------------------------
+Task11:
+
+Wap to check if  week days 
+
+import java.util.Scanner;
+class Task009 {
+   public static void main(String[] args) {
+       Scanner sc = new Scanner(System.in);
+       
+       System.out.println("Enter a Day =");
+       int day = sc.nextInt();
+       switch (day){
+           case 1:
+               System.out.println("monday");
+               break;
+            case 2:
+               System.out.println("Tuesday");
+               break;
+             case 3:
+               System.out.println("Wednesday");
+               break;
+             case 4:
+               System.out.println("Thursday");
+               break;
+             case 5:
+               System.out.println("Friday");
+               break;
+             case 6:
+               System.out.println("Saturday");
+               break;
+             case 7:
+               System.out.println("Sunday");
+               break;
+              default:
+                System.out.println("wrong Selection");
+                break;
+               
+               
+       }
+     
+       
+     
+       
+    }
+}
+
+o/p:
+
+
+Enter a Day =
+6
+Saturday
+---------------------------------------------------------------------------------------------------
+
+Task 012 while loop
+
+Wap to check loginid and password validation
+
+import java.util.Scanner;
+class Task012 {
+   public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       
+        String loginid = "Avinash";
+        String pwd = "12345678";
+        int Count = 0;
+
+       while(loginid.equals("Avinash") && pwd.equals("12345678")){
+        System.out.println(" you have logged in for   "  + Count++);
+    	System.out.println("enter ur login id and password");
+	     loginid = sc.nextLine();
+	     pwd = sc.nextLine();	
+	    
+}
+ Count++;
+
+     
+       
+     
+       
+    }
+}
+
+o/p:
+ you have logged in for   0
+enter ur login id and password
+Avinash
+12345678
+ you have logged in for   1
+enter ur login id and password
+Avinash
+12345678
+ you have logged in for   2
+enter ur login id and password
+avi
+123
+
+
+     
+ do while 
+---------------------------    
+     
+       
+import java.util.Scanner;
+class Task012 {
+   public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       
+        String loginid = "Avinash";
+        String pwd = "12345678";
+        int Count = 0;
+
+       do {
+        System.out.println(" you have logged in for   "  + Count++);
+    	System.out.println("enter ur login id and password");
+	     loginid = sc.nextLine();
+	     pwd = sc.nextLine();	
+	    
+} while (loginid.equals("Avinash") && pwd.equals("12345678"));
+ Count++;
+
+     
+       
+     
+       
+    }
+}
+
+
+o/p:
+ you have logged in for   0
+enter ur login id and password
+Avinash
+12345678
+ you have logged in for   1
+enter ur login id and password
+Avinash
+12345678
+ you have logged in for   2
+enter ur login id and password
+avi
+123
+
+-------------------------------------------------------------------------------------------------------------------
+
+
+Task 13:
+
+Wap to display numbers from 10 to 1 .. skip 7 and 5.
+
+for(int i= 10; i >0; i–){
+	If ( i == 5 || i == 7){
+		Continue;
+	sout(i);
+}
+
+
+0/p:  10 9 8 6 4 3 2 1
+------------------------------------------------------------------------------------------------------------------
+Task 014:
+
+Arrays:
+
+Try the below code and display the output… 
+Now play with it try to access arr of 5th index and see the output…and try to access arr of -1 index and see the output..
+
+package Arrays;
+class Task014 {
+   public static void main(String[] args) {
+       	char[] arr = {'a','e','i','o','u'};
+		System.out.println(arr);
+		String[] names = {"Meena", "Tina", "Veena", "heena"};
+		System.out.println(names[0]);
+		names[1]= "Reena";
+		System.out.println(names[1]);
+		System.out.println(names.length);
+		System.out.println(names[3]); 
+ 
+
+     
+       
+    }
+}
+
+
+
+o/p:
+
+aeiou
+Meena
+Reena
+4
+heena
+----------------------------------------------------------------------------------------------------
+Strings:
+
+Task 015:
+
+String – non primitive data gtype —> collection of characters or any value within “ ”
+
+package StringHandling;
+class Task015 {
+   public static void main(String[] args) {
+       
+       String str1 = "Java Strings "; // string Literal
+		String str2 = new String(str1); // obj of the string - new keyword
+		String str3 = new String("are easy to learn ");
+		char ch[] = {'S', 't', 'r' ,'i', 'n', 'g'}; 
+		String str4 = new String(ch);
+		System.out.println(str1 + "\n" + str2 + "\n" +str3 + "\n" +str4);
+
+       
+    }
+}
+
+o/p:
+Java Strings 
+Java Strings 
+are easy to learn 
+String
+-------------------------------------------------------------------------------------------------------------
+Task 016
+
+Enums or Enumerations   – part of  collection framework
+
+public class Main {
+
+	public static void main(String[] args) {
+		Weekdays c1 = Weekdays.Tuesday;
+		System.out.println(c1);	
+	}
+}
+enum Weekdays{
+	Sunday , Monday , Tuesday 	
+}
+o/p:
+Tuesday
+
+
+enum color{
+	red , yello , blue 	
+}
+public class Task015{
+
+	public static void main(String[] args) {
+		color c1 = color.yellow;
+		System.out.println(c1);	
+	}
+}
+
+o/p:
+yellow
+
+------------------------------------------------------------------------------------------------------------
