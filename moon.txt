@@ -387,6 +387,48 @@ public class Task031 {
     }
 }
 ----------------------------------------------------------------------------------------------------------------
+Task 32:
+
+
+class Calculation {
+    int z;
+
+    public void addition(int x, int y) {
+        z = x + y;
+        System.out.println("The sum of the given numbers: " + z);
+    }
+
+    public void subtraction(int x, int y) {
+        z = x - y;
+        System.out.println("The difference between the given numbers: " + z);
+    }
+}
+
+class Clock {
+    public void showTime() {
+        System.out.println("Current time: 10:00 AM");
+    }
+}
+
+
+class MyCalculation extends Calculation, Clock {
+    public void multiplication(int x, int y) {
+        z = x * y;
+        System.out.println("The product of the given numbers: " + z);
+    }
+}
+
+public class Task031 {
+    public static void main(String[] args) {
+        MyCalculation demo = new MyCalculation();
+
+        demo.addition(20, 10);
+        demo.subtraction(20, 10);
+        demo.multiplication(20, 10);
+        demo.showTime();
+    }
+}
+---------------------------------------------------------------------------------------------------------------
 task 33:
 
 
