@@ -507,4 +507,53 @@ public class Task033_1 extends Superclass{
         sobj.getVar();
     }
 }
- 
+ -----------------------------------------------------------------------------------------------------------
+
+	Task 034
+
+Void add(int x, int y){
+	Sout —> x and y values
+}
+Void add(int x, int y, int z){
+	Sout	—-> x, y, z values
+
+}
+psvm(){
+	add(10,20,30);
+	add(50,100);
+}
+	
+
+Type of parameters
+
+	Task 035
+
+Void add(char x, char y){
+	Sout	—-> x, y values
+}
+	
+Void add(int x, int y) {
+	Sout	—> x, y values
+}
+
+psvm(){
+	add(‘d’, ‘a’);
+	add(100, 100);
+}
+
+
+Sequence of Parameters
+
+	Task 036
+
+Void add(int x, float y){
+	Sout → x, y values
+}
+Void add(float x, int y){
+	Sout  → x, y
+}
+psvm(){
+	add(10.50f, 60);
+	add(100, 80.80f)
+}
+
