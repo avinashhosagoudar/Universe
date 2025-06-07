@@ -386,3 +386,44 @@ public class Task031 {
         demo.multiplication(a, b);
     }
 }
+----------------------------------------------------------------------------------------------------------------
+task 33:
+
+
+
+class Customer {
+    String items;
+    int cost;
+
+    void purchaseList() {
+        items = "Tomatoes";
+        cost = 40;
+    }
+}
+
+public class Mart extends Customer {
+    void billing() {
+        items = "Onions";
+        cost = 30;
+    }
+
+    public static void main(String[] args) {
+        Mart mart = new Mart();
+
+        // Call parent and child methods
+        mart.purchaseList();  // from Customer
+        mart.billing();       // from Mart
+
+        // Update values again
+        mart.items = "Potatoes";
+        mart.cost = 50;
+
+        System.out.println(mart.items);
+        System.out.println(mart.cost);
+        System.out.println("%%%%%%%%%%%%%%");
+
+        // Since 'mart' is a Mart (and also a Customer), prints current values
+        System.out.println(mart.items);
+        System.out.println(mart.cost);
+    }
+}
