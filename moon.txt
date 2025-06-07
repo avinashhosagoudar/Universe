@@ -557,3 +557,33 @@ psvm(){
 	add(100, 80.80f)
 }
 
+-------------------------------------------------------------------------------------------------------------
+Task037:
+
+
+Class Employee{
+	Private int pwd;
+	Protected int Salary;
+	Public int empid:
+	
+	employee(){ // constructors are methods having same name as class name  (we have in c++)
+	}
+	~employee(){// destructors used in c++ but not in java
+	}
+
+}
+Class Hr extends Employee {
+	super.pwd = 1254; //===============>  ??????
+	super.Salary = 50000; //==================>  ?
+Super.empid = 10001; // ======================>? 
+}
+
+Class Driver{
+	psvm(){
+		Access all variables…????  
+		super.pwd = 1254; //===============>  ??????
+		super.Salary = 50000; //==================>  ?
+Super.empid = 10001; // ======================>? 
+}
+}
+
