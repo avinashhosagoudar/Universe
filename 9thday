@@ -146,3 +146,23 @@ public class Main {
 }
 
 
+Task014:
+
+class OuterClass{
+	Int x = 50;
+Class InnerClass {
+		Public int innerMethod() {
+			Return x;
+		}
+}
+}
+
+Public class DriverClass {
+	psvm(){
+		OuterClass myOuter = new OuterClass();
+		OuterClass.InnerClass myInner = myOuter.new InnerClass();
+    		System.out.println(myInner.innerMethod());
+}
+}
+
+
