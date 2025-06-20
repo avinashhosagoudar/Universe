@@ -80,3 +80,6 @@ ThreadDemo T2 = new ThreadDemo( "Thread-2");
 T2.start();
 }
 }
+
+
+https://docs.google.com/document/d/1k1-tL_HA-h3hQEE4uOL718HUzE82uuQ4RnIdOXNOBoM/edit?tab=t.0
