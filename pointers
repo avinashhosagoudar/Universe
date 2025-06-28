@@ -269,3 +269,32 @@ class CustomLinkedList {
         return temp.data;
     }
 }
+
+
+public class Main {
+    public static void main(String[] args) {
+        CustomLinkedList list = new CustomLinkedList();
+
+        list.add(10);
+        list.add("Java");
+        list.add(3.14);
+        list.add(true);
+
+        System.out.print("All Elements: ");
+        list.display();
+
+        System.out.println("Size: " + list.getSize());
+
+        System.out.println("Element at index 2: " + list.get(2));
+
+        list.remove("Java");
+
+        System.out.print("After removing 'Java': ");
+        list.display();
+
+        System.out.println("Size: " + list.getSize());
+
+        // Uncomment this to test IndexOutOfBounds
+        // System.out.println(list.get(10)); // Throws exception
+    }
+}
