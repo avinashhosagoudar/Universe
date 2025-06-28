@@ -515,4 +515,72 @@ public class Main {
         list.displayBackward();  // Backward: 30 <-> 20 <-> 10 <-> null
     }
 }
+-------------------------------------------------------------------------------------------------------------------------------
+
+Task21:
+
+// Node class to hold data and next pointer
+class Node {
+    int data;
+    Node next;
+
+    // Constructor
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+
+// Custom class for Circular Linked List
+class CircularLinkedList {
+    private Node head = null;
+    private Node tail = null;
+
+    // ✅ Custom method to add data to the circular linked list
+    public void add(int value) {
+        Node newNode = new Node(value);
+
+        if (head == null) {
+            head = tail = newNode;
+            newNode.next = head; // circular link
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+            tail.next = head; // re-link tail to head
+        }
+    }
+
+    // ✅ Custom method to display all elements (traverse)
+    public void display() {
+        if (head == null) {
+            System.out.println("Circular Linked List is empty.");
+            return;
+        }
+
+        Node current = head;
+        System.out.print("Circular Linked List: ");
+        do {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        } while (current != head);
+
+        System.out.println("(back to head)");
+    }
+}
+
+// Main class to run the program
+public class Main {
+    public static void main(String[] args) {
+        CircularLinkedList cll = new CircularLinkedList();
+
+        // Adding elements using custom method
+        cll.add(5);
+        cll.add(10);
+        cll.add(15);
+        cll.add(20);
+
+        // Displaying all elements
+        cll.display();
+    }
+}
 
