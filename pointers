@@ -836,3 +836,97 @@ public class TaskLL001 {
 }
 
 
+-----------------------------------------------------
+queue
+// Node class
+class Node {
+    int data;
+    Node next;
+
+    Node(int value) {
+        data = value;
+        next = null;
+    }
+}
+
+// Custom Queue class
+class CustomQueue {
+    private Node front, rear;
+
+    // Constructor
+    public CustomQueue() {
+        front = rear = null;
+    }
+
+    // Enqueue - Add element at rear
+    public void enqueue(int value) {
+        Node newNode = new Node(value);
+
+        if (rear == null) {  // First element
+            front = rear = newNode;
+        } else {
+            rear.next = newNode;
+            rear = newNode;
+        }
+    }
+
+    // Dequeue - Remove element from front
+    public int dequeue() {
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+
+        int value = front.data;
+        front = front.next;
+
+        if (front == null) {
+            rear = null;  // Queue becomes empty
+        }
+
+        return value;
+    }
+
+    // Peek - See front element
+    public int peek() {
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return -1;
+        }
+
+        return front.data;
+    }
+
+    // Display the queue
+    public void display() {
+        if (front == null) {
+            System.out.println("Queue is empty");
+            return;
+        }
+
+        Node temp = front;
+        System.out.print("Queue: ");
+        while (temp != null) {
+            System.out.print(temp.data + " <- ");
+            temp = temp.next;
+        }
+        System.out.println("null");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        CustomQueue queue = new CustomQueue();
+
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        queue.display();  // Output: 10 <- 20 <- 30 <- null
+
+        System.out.println("Front element (peek): " + queue.peek());
+
+        System.out.println("Dequeued: " + queue.dequeue());
+        queue.display();  // Output: 20 <- 30 <- null
+    }
+}
