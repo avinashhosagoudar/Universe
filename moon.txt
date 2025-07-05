@@ -798,3 +798,88 @@ https://docs.google.com/document/d/1xzdCU4lbTQU_jXdoSSug6tJKmaWCt09NKjjRwssFYFM/
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
+
+
+// Node class
+class Node {
+    int data;
+    Node left, right;
+
+    Node(int value) {
+        data = value;
+        left = right = null;
+    }
+}
+
+// Binary Search Tree class
+public class BinarySearchTree {
+    Node root;
+
+    // Constructor to initialize empty tree
+    BinarySearchTree() {
+        root = null;
+    }
+
+    // 1. Insert when tree is empty
+    void insertIfEmpty(int value) {
+        if (root == null) {
+            root = new Node(value);
+            System.out.println("Inserted " + value + " as root");
+        } else {
+            System.out.println("Tree is not empty");
+        }
+    }
+
+    // 2. Insert when tree has 1 or more nodes
+    void insertIfNotEmpty(int value) {
+        if (root == null) {
+            System.out.println("Tree is empty. Use insertIfEmpty first.");
+        } else {
+            insert(root, value);
+        }
+    }
+
+    // Helper method for insertion
+    void insert(Node node, int value) {
+        if (value < node.data) {
+            if (node.left == null) {
+                node.left = new Node(value);
+            } else {
+                insert(node.left, value);
+            }
+        } else if (value > node.data) {
+            if (node.right == null) {
+                node.right = new Node(value);
+            } else {
+                insert(node.right, value);
+            }
+        }
+    }
+
+    // Display tree - Inorder
+    void display() {
+        inorder(root);
+        System.out.println();
+    }
+
+    void inorder(Node node) {
+        if (node != null) {
+            inorder(node.left);
+            System.out.print(node.data + " ");
+            inorder(node.right);
+        }
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        BinarySearchTree tree = new BinarySearchTree();
+
+        tree.insertIfEmpty(10);     // root
+        tree.insertIfNotEmpty(5);   // left
+        tree.insertIfNotEmpty(15);  // right
+
+        System.out.print("Tree (Inorder): ");
+        tree.display();
+    }
+}
+
