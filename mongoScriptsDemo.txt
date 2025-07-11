@@ -947,7 +947,7 @@ public class MergeSort {
 
 import java.util.Arrays;
 
-public class QuickSort {
+public class Task014_Quick_Sort {
 
     // Main quick sort function
     public static void quickSort(int[] arr, int low, int high) {
